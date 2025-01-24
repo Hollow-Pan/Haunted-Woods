@@ -127,6 +127,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7374567128561417105, guid: e71e8bcb3368d4a4a9aa18387ef670c3, type: 3}
   m_PrefabInstance: {fileID: 1790654474201816341}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &132238681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1275865601088005977, guid: 082648eabbbb2a348ad3b323f3020cfc, type: 3}
+  m_PrefabInstance: {fileID: 3505989276204961212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b565f475b8271154bae8fc315a5e62a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &174128053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3012480242013941491, guid: 7ba3bc04e7680714fa448a7729512ac4, type: 3}
@@ -671,6 +682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4072845135803775094, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
+      propertyPath: leaderboard
+      value: 
+      objectReference: {fileID: 132238681}
     - target: {fileID: 4909221362471658916, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 131.55
@@ -711,12 +726,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7998214813983468723, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5296998395915563210, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

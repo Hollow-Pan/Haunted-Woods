@@ -11,6 +11,7 @@ public class PlayerHealth : Singleton<PlayerHealth>{
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockbackThrust = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
+    [SerializeField] private Leaderboard leaderboard;
 
     private Slider healthSlider;
     private int currentHealth;
@@ -67,15 +68,16 @@ public class PlayerHealth : Singleton<PlayerHealth>{
         if (currentHealth <= 0 && !IsDead){
             IsDead = true;
             currentHealth = 0;
-            Destroy(ActiveWeapon.Instance.gameObject);
+            //Destroy(ActiveWeapon.Instance.gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            leaderboard.AddLeaderboardEntry(PointsManager.Instance.DeathFlag());
             StartCoroutine(DeathLoadSceneRoutine());
         }
     }
 
     private IEnumerator DeathLoadSceneRoutine(){
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+        //Destroy(gameObject);
         Stamina.Instance.RefillStaminaOnDeath();
         DeathScreenUI.Instance.Show();
         DeathScreenUI.Instance.UpdateVisual();
