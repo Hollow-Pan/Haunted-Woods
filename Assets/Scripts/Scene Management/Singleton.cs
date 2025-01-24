@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Singleton<T> : MonoBehaviour where T: Singleton<T> {
 
@@ -18,6 +19,25 @@ public class Singleton<T> : MonoBehaviour where T: Singleton<T> {
         if (!gameObject.transform.parent){
             DontDestroyOnLoad(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    protected virtual void OnDestroy() {
+        if (instance == this) {
+            instance = null;
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (ShouldDestroyInScene(scene.name)) {
+            Destroy(gameObject);
+        }
+    }
+
+    protected virtual bool ShouldDestroyInScene(string sceneName) {
+        return false;
     }
 
 }

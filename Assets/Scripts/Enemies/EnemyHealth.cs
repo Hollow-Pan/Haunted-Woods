@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int startingHealth = 3;
     [SerializeField] private GameObject deathVFXPrefab;
     [SerializeField] private float knockbackThrust = 15f;
+    [SerializeField] private int enemyScore;
 
     private int currentHealth;
     private Knockback knockback;
@@ -37,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0) {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             GetComponent<PickupSpawner>().DropItems();
+            PointsManager.Instance.UpdateCurrentPoints(enemyScore);
             Destroy(gameObject);
         }
     }

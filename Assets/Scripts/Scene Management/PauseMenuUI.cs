@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PauseMenuUI : Singleton<PauseMenuUI>{
 
+    protected override bool ShouldDestroyInScene(string sceneName)
+    {
+        return sceneName == "MainMenuScene";
+    }
+
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameUnpaused;
 
@@ -17,6 +22,10 @@ public class PauseMenuUI : Singleton<PauseMenuUI>{
         playerControls = new PlayerControls();
     }
 
+
+    private void Start() {
+        playerControls.UI.PauseMenu.performed += _ => TogglePauseMenu();
+    }
     private void OnEnable() {
         playerControls.Enable();
     }
@@ -25,8 +34,11 @@ public class PauseMenuUI : Singleton<PauseMenuUI>{
         playerControls.Disable();
     }
 
-    private void Start() {
-        playerControls.UI.PauseMenu.performed += _ => TogglePauseMenu();
+    protected override void OnDestroy() {
+        base.OnDestroy(); // Unsubscribe from scene events in Singleton<T>
+        if (playerControls != null) {
+            playerControls.Dispose();
+        }
     }
 
     public void TogglePauseMenu(){

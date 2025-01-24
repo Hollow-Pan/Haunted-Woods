@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
+
+    protected override bool ShouldDestroyInScene(string sceneName)
+    {
+        return sceneName == "MainMenuScene";
+    }
+
     public bool FacingLeft { get { return facingLeft; } }
 
     [SerializeField] private float moveSpeed = 1f;
@@ -49,6 +55,13 @@ public class PlayerController : Singleton<PlayerController>
 
     private void OnDisable(){
         playerControls.Disable();
+    }
+
+    protected override void OnDestroy() {
+        base.OnDestroy(); // Unsubscribe from scene events in Singleton<T>
+        if (playerControls != null) {
+            playerControls.Dispose();
+        }
     }
 
     private void Update() {

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class UIFade : Singleton<UIFade>{
 
+    protected override bool ShouldDestroyInScene(string sceneName)
+    {
+        return sceneName == "MainMenuScene";
+    }
+
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeSpeed = 1f;
 
