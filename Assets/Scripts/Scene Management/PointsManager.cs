@@ -20,4 +20,8 @@ public class PointsManager : Singleton<PointsManager>{
         pointsAmountText.text = currentPoints.ToString("D3");
     }
 
+    public int DeathFlag(){
+        return currentPoints;
+    }
+
 }
