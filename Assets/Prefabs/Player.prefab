@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3144712691478304699}
   - component: {fileID: 695089177921063615}
   - component: {fileID: 4072845135803775094}
-  - component: {fileID: 5296998395915563210}
+  - component: {fileID: 2152895513114224119}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -348,7 +348,7 @@ MonoBehaviour:
   maxHealth: 5
   knockbackThrust: 10
   damageRecoveryTime: 1
---- !u!114 &5296998395915563210
+--- !u!114 &2152895513114224119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,12 +357,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 546300065388778125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2a9ea1fb5300649bcdef9f612071a9, type: 3}
+  m_Script: {fileID: 11500000, guid: e0380a482f03c854889f44dc0916576a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fullStaminaImage: {fileID: 21300000, guid: 62529597d78f65a42b6e275ffa566bd7, type: 3}
   emptyStaminaImage: {fileID: 21300000, guid: ec71b9cc07c0f174fa793c44ad79dedc, type: 3}
-  timeBetweenStaminaRefill: 1
+  timeBetweenStaminaRefill: 2
 --- !u!1 &1660270948865203921
 GameObject:
   m_ObjectHideFlags: 0

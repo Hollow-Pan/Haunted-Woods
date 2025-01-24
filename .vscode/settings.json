@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "2D-RPG-Placeholder.sln"
+    "dotnet.defaultSolution": "Haunted-Woods.sln"
 }
