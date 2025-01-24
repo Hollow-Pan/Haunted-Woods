@@ -1,4 +1,8 @@
 # Haunted Woods
+BUILD LINK: *placeholder*
+
+ABOUT: *placeholder*
+
  
 SCRIPTS:
 
