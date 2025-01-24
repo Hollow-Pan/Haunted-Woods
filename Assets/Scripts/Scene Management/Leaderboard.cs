@@ -8,6 +8,7 @@ public class Leaderboard : MonoBehaviour {
     [SerializeField] private Transform entryContainer;
     [SerializeField] private Transform entryTemplate;
     [SerializeField] private float templateHeight = 20f;
+
     [SerializeField] private Sprite goldMedal;
     [SerializeField] private Sprite silverMedal;
     [SerializeField] private Sprite bronzeMedal;
@@ -16,23 +17,44 @@ public class Leaderboard : MonoBehaviour {
     private List<Transform> leaderboardEntryTransformList;
 
     private void Awake() {
+        string jsonString = PlayerPrefs.GetString("leaderboard");
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString) ?? new HighScores();
 
-        string jsonString = PlayerPrefs.GetString("leaderboard", string.Empty);
-        HighScores highScores = string.IsNullOrEmpty(jsonString) 
-            ? new HighScores { leaderboardEntryList = new List<LeaderboardEntry>() }
-            : JsonUtility.FromJson<HighScores>(jsonString);
+        leaderboardEntryList = highScores.leaderboardEntryList ?? new List<LeaderboardEntry>();
+        leaderboardEntryList.Sort((a, b) => b.score.CompareTo(a.score)); // Sort descending
 
-        leaderboardEntryList = highScores.leaderboardEntryList;
         leaderboardEntryTransformList = new List<Transform>();
-
-        leaderboardEntryList.Sort((a, b) => b.score.CompareTo(a.score));
     }
 
     private void Start() {
         entryTemplate.gameObject.SetActive(false);
 
-        int maxEntries = Mathf.Min(5, leaderboardEntryList.Count);
+        UpdateLeaderboardUI();
+    }
 
+    public void AddScoreToLeaderboard(int score) {
+        LeaderboardEntry newEntry = new LeaderboardEntry { score = score };
+
+        leaderboardEntryList.Add(newEntry);
+        leaderboardEntryList.Sort((a, b) => b.score.CompareTo(a.score)); // Keep it sorted
+
+        // Save updated leaderboard
+        HighScores highScores = new HighScores { leaderboardEntryList = leaderboardEntryList };
+        string json = JsonUtility.ToJson(highScores);
+        PlayerPrefs.SetString("leaderboard", json);
+        PlayerPrefs.Save();
+
+        // Update UI
+        UpdateLeaderboardUI();
+    }
+
+    private void UpdateLeaderboardUI() {
+        foreach (Transform entryTransform in leaderboardEntryTransformList) {
+            Destroy(entryTransform.gameObject);
+        }
+        leaderboardEntryTransformList.Clear();
+
+        int maxEntries = Mathf.Min(5, leaderboardEntryList.Count);
         for (int i = 0; i < maxEntries; i++) {
             CreateLeaderboardEntryTransform(leaderboardEntryList[i], entryContainer, leaderboardEntryTransformList);
         }
@@ -46,55 +68,30 @@ public class Leaderboard : MonoBehaviour {
 
         int rank = transformList.Count + 1;
 
-        TextMeshProUGUI rankText = entryTransform.Find("posTextTemplate").GetComponent<TextMeshProUGUI>();
-        Image medalImage = entryTransform.Find("medalImageTemplate").GetComponent<Image>();
+        Transform medal = entryTransform.Find("medalImageTemplate");
+        Transform rankText = entryTransform.Find("posTextTemplate");
 
-        if (rank == 1) {
-            medalImage.sprite = goldMedal;
-            medalImage.gameObject.SetActive(true);
+        if (rank <= 3) {
+            medal.gameObject.SetActive(true);
             rankText.gameObject.SetActive(false);
-        } else if (rank == 2) {
-            medalImage.sprite = silverMedal;
-            medalImage.gameObject.SetActive(true);
-            rankText.gameObject.SetActive(false);
-        } else if (rank == 3) {
-            medalImage.sprite = bronzeMedal;
-            medalImage.gameObject.SetActive(true);
-            rankText.gameObject.SetActive(false);
+
+            Image medalSprite = medal.GetComponent<Image>();
+            if (rank == 1) medalSprite.sprite = goldMedal;
+            else if (rank == 2) medalSprite.sprite = silverMedal;
+            else if (rank == 3) medalSprite.sprite = bronzeMedal;
         } else {
-            medalImage.gameObject.SetActive(false);
+            medal.gameObject.SetActive(false);
             rankText.gameObject.SetActive(true);
-            rankText.text = rank + GetRankSuffix(rank);
+            rankText.GetComponent<TextMeshProUGUI>().text = $"{rank}TH";
         }
 
-        // Set the score text
         entryTransform.Find("scoreTextTemplate").GetComponent<TextMeshProUGUI>().text = leaderboardEntry.score.ToString();
 
         transformList.Add(entryTransform);
     }
 
-    private string GetRankSuffix(int rank) {
-        switch (rank % 10) {
-            case 1 when rank != 11: return "ST";
-            case 2 when rank != 12: return "ND";
-            case 3 when rank != 13: return "RD";
-            default: return "TH";
-        }
-    }
-
-    public void AddLeaderboardEntry(int score){
-        LeaderboardEntry newEntry = new LeaderboardEntry {score = score};
-        leaderboardEntryList.Add(newEntry);
-
-        leaderboardEntryList.Sort((a, b) => b.score.CompareTo(a.score));
-
-        HighScores highScores = new HighScores { leaderboardEntryList = leaderboardEntryList };
-        string json = JsonUtility.ToJson(highScores);
-        PlayerPrefs.SetString("leaderboard", json);
-        PlayerPrefs.Save();
-    }
-
-    private class HighScores{
+    [System.Serializable]
+    private class HighScores {
         public List<LeaderboardEntry> leaderboardEntryList;
     }
 

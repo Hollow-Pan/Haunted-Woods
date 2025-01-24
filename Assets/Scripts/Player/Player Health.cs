@@ -70,7 +70,7 @@ public class PlayerHealth : Singleton<PlayerHealth>{
             currentHealth = 0;
             //Destroy(ActiveWeapon.Instance.gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
-            leaderboard.AddLeaderboardEntry(PointsManager.Instance.DeathFlag());
+            leaderboard.AddScoreToLeaderboard(PointsManager.Instance.DeathFlag());
             StartCoroutine(DeathLoadSceneRoutine());
         }
     }
