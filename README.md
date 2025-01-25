@@ -1,5 +1,6 @@
 # Haunted Woods
-BUILD LINK: 
+BUILD LINK: windows downloadable gdrive link: https://drive.google.com/drive/folders/1uRSaf0gKgej10MeIMGjHchZPYP6dQtbN
+            webgl playable itchio link: https://hollow-pan.itch.io/haunted-woods
 
 ABOUT: 
 
