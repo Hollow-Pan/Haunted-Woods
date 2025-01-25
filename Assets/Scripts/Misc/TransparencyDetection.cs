@@ -18,7 +18,7 @@ public class TransparencyDetection : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.GetComponent<PlayerController>()){
+        if (other.gameObject.GetComponent<PlayerController>() || (other.gameObject.GetComponent<EnemyAI>() || other.gameObject.GetComponent<Pickup>())){
             if (spriteRenderer){
                 StartCoroutine(FadeCoroutine(spriteRenderer, fadeTime, spriteRenderer.color.a, transparencyAmount));
             }
@@ -29,7 +29,7 @@ public class TransparencyDetection : MonoBehaviour{
     }
 
     private void OnTriggerExit2D(Collider2D other){
-        if (other.gameObject.GetComponent<PlayerController>()){
+        if (other.gameObject.GetComponent<PlayerController>() || (other.gameObject.GetComponent<EnemyAI>() || other.gameObject.GetComponent<Pickup>())){
             if (spriteRenderer){
                 StartCoroutine(FadeCoroutine(spriteRenderer, fadeTime, spriteRenderer.color.a, 1));
             }

@@ -14,7 +14,7 @@ public class PlayerHealth : Singleton<PlayerHealth>{
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private Leaderboard leaderboard;
 
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private float newOrthoSize = 2f;
 
     private Slider healthSlider;
@@ -38,6 +38,26 @@ public class PlayerHealth : Singleton<PlayerHealth>{
         IsDead = false;
         currentHealth = maxHealth;
         UpdateHealthSlider();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+
+        if (virtualCamera == null)
+        {
+            Debug.LogWarning("No CinemachineVirtualCamera found in the scene!");
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other) {
@@ -96,7 +116,7 @@ public class PlayerHealth : Singleton<PlayerHealth>{
 
     private IEnumerator DeathLoadSceneRoutine(){
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+        //Destroy(gameObject);
         Stamina.Instance.RefillStaminaOnDeath();
         DeathScreenUI.Instance.Show();
         DeathScreenUI.Instance.UpdateVisual();
