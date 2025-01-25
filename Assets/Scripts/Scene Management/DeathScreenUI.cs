@@ -14,7 +14,7 @@ public class DeathScreenUI : Singleton<DeathScreenUI>{
         base.Awake();
 
         mainMenuButton.onClick.AddListener(() => {
-            SceneManager.LoadScene("MainMenuScene");
+            Application.Quit();
         });
     }
 

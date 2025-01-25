@@ -13431,6 +13431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4072845135803775094, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
+      propertyPath: leaderboard
+      value: 
+      objectReference: {fileID: 907542308}
     - target: {fileID: 4909221362471658916, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.03
@@ -31142,134 +31146,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1603626689144950994, guid: e5e3d650d70ab5045aa1a0e8f9bb1601, type: 3}
   m_PrefabInstance: {fileID: 789221435}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &793608494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 793608496}
-  - component: {fileID: 793608495}
-  m_Layer: 0
-  m_Name: MusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &793608495
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793608494}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eedf60cd8f339454b87fd6de08eda9c0, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &793608496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793608494}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &798024028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33685,6 +33561,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 082648eabbbb2a348ad3b323f3020cfc, type: 3}
+--- !u!114 &907542308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1275865601088005977, guid: 082648eabbbb2a348ad3b323f3020cfc, type: 3}
+  m_PrefabInstance: {fileID: 907542307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b565f475b8271154bae8fc315a5e62a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &907638711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34989,11 +34876,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387034397166122962, guid: ce8bb951bbe60eb47aaa80a42922bd0b, type: 3}
       propertyPath: m_text
-      value: "Thee has 5 minutes out in the Cursed Woods bef're the shadows killeth
-        thee.\nTimer starts as soon as thee stepeth in. \r\nDestroyeth as many monst'rs
-        as thee can to marketh thy name in the Hall of Fame!\r\nBeware, and most
-        wondrous of luck.  Thee'll needeth it\n\n(Pink Slimes - 1 point\nPurple Grapes
-        - 3 points\r\nGhosts - 7 points)\r"
+      value: "Boat to the Curs'd Woods\n\nDestroyeth as many monst'rs as thee can
+        to marketh thy name in the Hall of Fame!\r\nBeware, and most wondrous of
+        luck.  Thee'll needeth it\n\n(Pink Slimes - 1 point\nPurple Grapes - 3 points\r\nGhosts
+        - 7 points)\r"
       objectReference: {fileID: 0}
     - target: {fileID: 6387034397166122962, guid: ce8bb951bbe60eb47aaa80a42922bd0b, type: 3}
       propertyPath: m_fontColor.a
@@ -99962,5 +99848,4 @@ SceneRoots:
   - {fileID: 1565405326}
   - {fileID: 1483580702}
   - {fileID: 1728409631}
-  - {fileID: 793608496}
   - {fileID: 944517141}
