@@ -524,11 +524,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.985583
+      value: -36.8
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.794016
+      value: -75.4
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6796,11 +6796,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.996516
+      value: -29.81093
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.926537
+      value: -72.532524
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38151,11 +38151,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.91438
+      value: -32.728794
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.426268
+      value: -78.03226
       objectReference: {fileID: 0}
     - target: {fileID: 3256491923708802300, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -91862,7 +91862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1944317347
 Transform:
   m_ObjectHideFlags: 0
