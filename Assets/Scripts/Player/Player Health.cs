@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,9 @@ public class PlayerHealth : Singleton<PlayerHealth>{
     [SerializeField] private float knockbackThrust = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private Leaderboard leaderboard;
+
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private float newOrthoSize = 2f;
 
     private Slider healthSlider;
     private int currentHealth;
@@ -68,16 +72,31 @@ public class PlayerHealth : Singleton<PlayerHealth>{
         if (currentHealth <= 0 && !IsDead){
             IsDead = true;
             currentHealth = 0;
-            //Destroy(ActiveWeapon.Instance.gameObject);
+            Destroy(ActiveWeapon.Instance.gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
             leaderboard.AddScoreToLeaderboard(PointsManager.Instance.DeathFlag());
+            StartCoroutine(LerpOrthoSize());
             StartCoroutine(DeathLoadSceneRoutine());
         }
     }
 
+    private IEnumerator LerpOrthoSize(){
+        float startSize = virtualCamera.m_Lens.OrthographicSize;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 0.6f){
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / 0.6f);
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(startSize, newOrthoSize, t);
+            yield return null;
+        }
+
+        virtualCamera.m_Lens.OrthographicSize = newOrthoSize;
+    }
+
     private IEnumerator DeathLoadSceneRoutine(){
         yield return new WaitForSeconds(2f);
-        //Destroy(gameObject);
+        Destroy(gameObject);
         Stamina.Instance.RefillStaminaOnDeath();
         DeathScreenUI.Instance.Show();
         DeathScreenUI.Instance.UpdateVisual();

@@ -538,6 +538,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5384179620820345988, guid: 94c4f0befefb0f84390b0bb2556aae35, type: 3}
   m_PrefabInstance: {fileID: 8915709055737923621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2032193070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4995367336565645645, guid: a952d0800e677c143b23afa4416bc32b, type: 3}
+  m_PrefabInstance: {fileID: 1614070231420122487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2064149981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5807380385785385191, guid: 89a26eecfa6607244a7b22dca3b1ad5c, type: 3}
@@ -686,6 +697,10 @@ PrefabInstance:
       propertyPath: leaderboard
       value: 
       objectReference: {fileID: 132238681}
+    - target: {fileID: 4072845135803775094, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 2032193070}
     - target: {fileID: 4909221362471658916, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 131.55

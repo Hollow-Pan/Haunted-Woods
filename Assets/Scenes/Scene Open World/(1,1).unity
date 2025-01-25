@@ -536,6 +536,10 @@ PrefabInstance:
       propertyPath: stopMotionWhileAttacking
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5298221971328267602, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
+      propertyPath: enemyScore
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8665798933138921796, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: m_Name
       value: Ghost

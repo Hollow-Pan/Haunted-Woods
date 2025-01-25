@@ -2128,6 +2128,10 @@ PrefabInstance:
       propertyPath: leaderboard
       value: 
       objectReference: {fileID: 907542308}
+    - target: {fileID: 4072845135803775094, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 923618050}
     - target: {fileID: 4909221362471658916, guid: 5b1a7617268a1bf4fab8c08aef3274c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.74
@@ -18054,6 +18058,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a952d0800e677c143b23afa4416bc32b, type: 3}
+--- !u!114 &923618050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4995367336565645645, guid: a952d0800e677c143b23afa4416bc32b, type: 3}
+  m_PrefabInstance: {fileID: 923618049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &936178093
 PrefabInstance:
   m_ObjectHideFlags: 0
