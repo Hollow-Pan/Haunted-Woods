@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamingChangeDirectionTime: 2
-  attackRange: 5
+  attackRange: 4
   attackCooldown: 0
   enemyType: {fileID: 1236877762665003806}
   stopMotionWhileAttacking: 1

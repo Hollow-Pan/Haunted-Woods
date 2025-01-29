@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7100197230721163835}
   - component: {fileID: 6484946975831076210}
   - component: {fileID: 1169696213727535001}
-  - component: {fileID: 6455947149250306510}
   - component: {fileID: 1897489395646624791}
   - component: {fileID: 7601966652729812704}
+  - component: {fileID: 2734068559124544936}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -123,20 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &6455947149250306510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529923656471160521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61ec38718980624b970f70e66ccb136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transparencyAmount: 0.8
-  fadeTime: 0.4
 --- !u!58 &1897489395646624791
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +170,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a117f46a287d1cc42b9e942736a51fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2734068559124544936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529923656471160521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61ec38718980624b970f70e66ccb136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparencyAmount: 0.8
+  fadeTime: 0.4
+  tileTransparencyRadius: 5

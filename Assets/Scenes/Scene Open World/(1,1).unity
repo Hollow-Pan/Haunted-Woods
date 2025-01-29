@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687374620926488373, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: restTime
-      value: 1.01
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8687374620926488373, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: oscillate
@@ -570,11 +570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687374620926488373, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: timeBetweenBursts
-      value: 0.33
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8687374620926488373, guid: fd73bdd4f4c39084389bfa168ce9b88a, type: 3}
       propertyPath: projectilesPerBurst
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
